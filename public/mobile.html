@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development | ProServices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reusing your existing styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .app-hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .app-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Content Section */
+        .app-content {
+            padding: 50px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .app-content h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .app-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .app-content ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .app-content li {
+            margin-bottom: 10px;
+        }
+        
+        .app-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .app-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1 1 300px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .app-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-item {
+            background: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .app-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .app-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="home.html" class="logo">Pro<span>Services</span></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+        <div class="container">
+            <h1>Mobile App Development</h1>
+            <p>Building powerful mobile experiences for iOS and Android</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="app-content">
+        <div class="container">
+            <h2>Custom Mobile Solutions</h2>
+            <p>We create high-performance mobile apps that help businesses engage customers and streamline operations. Our apps are designed to:</p>
+            
+            <ul>
+                <li>Provide seamless user experiences</li>
+                <li>Work perfectly on all device sizes</li>
+                <li>Load quickly and perform smoothly</li>
+                <li>Integrate with your existing systems</li>
+                <li>Keep your data secure</li>
+            </ul>
+            
+            <h2>Our App Development Services</h2>
+            
+            <div class="app-types">
+                <div class="app-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Native Apps</h3>
+                    <p>Platform-specific apps built for maximum performance using Swift (iOS) and Kotlin (Android).</p>
+                </div>
+                <div class="app-card">
+                    <h3><i class="fas fa-globe"></i> Cross-Platform Apps</h3>
+                    <p>Single codebase apps that run on both iOS and Android using Flutter or React Native.</p>
+                </div>
+                <div class="app-card">
+                    <h3><i class="fas fa-sync-alt"></i> Hybrid Apps</h3>
+                    <p>Web-based apps wrapped in a native container for wider reach with native features.</p>
+                </div>
+            </div>
+            
+            <h2>Our Technology Stack</h2>
+            
+            <div class="tech-stack">
+                <span class="tech-item">Swift</span>
+                <span class="tech-item">Kotlin</span>
+                <span class="tech-item">Flutter</span>
+                <span class="tech-item">React Native</span>
+                <span class="tech-item">Firebase</span>
+                <span class="tech-item">Android Studio</span>
+                <span class="tech-item">Xcode</span>
+            </div>
+            
+            <h2>Our Development Process</h2>
+            <p>1. Discovery - We analyze your requirements and target audience</p>
+            <p>2. Design - We create wireframes and UI/UX designs</p>
+            <p>3. Development - We build your app with clean, maintainable code</p>
+            <p>4. Testing - We rigorously test on multiple devices</p>
+            <p>5. Deployment - We publish to app stores and provide updates</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ProServices. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

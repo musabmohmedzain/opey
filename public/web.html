@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reusing your existing styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Same as your home page */
+        header {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        /* Simple Content Section */
+        .webdev-hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .webdev-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .webdev-content {
+            padding: 50px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .webdev-content h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .webdev-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .webdev-content ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .webdev-content li {
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-item {
+            background: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer - Same as your home page */
+        footer {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .webdev-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .webdev-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="home.html" class="logo">Pro<span>Services</span></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="webdev-hero">
+        <div class="container">
+            <h1>Web Development Services</h1>
+            <p>Building modern, responsive websites for your business</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="webdev-content">
+        <div class="container">
+            <h2>Custom Web Solutions</h2>
+            <p>We create beautiful, functional websites tailored to your specific needs. Our web development services help businesses establish a strong online presence with:</p>
+            
+            <ul>
+                <li>Fully responsive designs that work on all devices</li>
+                <li>Fast loading times and optimized performance</li>
+                <li>Clean, user-friendly interfaces</li>
+                <li>SEO-friendly structure</li>
+                <li>Easy content management</li>
+            </ul>
+            
+            <h2>Our Technology Stack</h2>
+            <p>We use modern technologies to build robust websites:</p>
+            
+            <div class="tech-stack">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">WordPress</span>
+                <span class="tech-item">PHP</span>
+                <span class="tech-item">MySQL</span>
+            </div>
+            
+            <h2>Our Process</h2>
+            <p>1. Consultation - We discuss your requirements and goals</p>
+            <p>2. Planning - We create a sitemap and design mockups</p>
+            <p>3. Development - We build your website with clean code</p>
+            <p>4. Testing - We ensure everything works perfectly</p>
+            <p>5. Launch - We deploy your website and provide support</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ProServices. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

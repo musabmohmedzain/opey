@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" id="login-form">
+      <h2>تسجيل الدخول</h2>
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <button type="submit">دخول</button>
+      <p class="signup-link">ليس لديك حساب؟ <a href="register.html">إنشاء حساب</a></p>
+    </form>
+  </div>
+
+  <script>
+  document.querySelector('.login-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const email = e.target.querySelector('input[type="email"]').value;
+  const password = e.target.querySelector('input[type="password"]').value;
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username: email, password })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      // تم تسجيل الدخول بنجاح، نحول المستخدم
+      window.location.href = 'home.html';
+    } else {
+      alert(data.message || 'خطأ في تسجيل الدخول');
+    }
+  } catch (err) {
+    alert('حدث خطأ في الاتصال بالسيرفر');
+  }
+});
+  </script>
+</body>
+</html>

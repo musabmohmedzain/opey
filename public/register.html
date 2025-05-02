@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" id="register-form">
+      <h2>إنشاء حساب</h2>
+      <input type="text" id="username" placeholder="الاسم الكامل" required>
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <input type="password" id="confirmPassword" placeholder="تأكيد كلمة المرور" required>
+      <button id="registerBtn" type="submit">تسجيل</button>
+      <p class="signup-link">لديك حساب؟ <a href="login.html">تسجيل الدخول</a></p>
+    </form>
+  </div>
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.querySelector('.login-form');
+    if (!registerForm) return;
+
+    registerForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const email = registerForm.querySelector('input[type="email"]').value.trim();
+      const password = registerForm.querySelectorAll('input[type="password"]')[0].value;
+      const confirmPassword = registerForm.querySelectorAll('input[type="password"]')[1].value;
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        Swal.fire({ icon: 'error', title: 'بريد غير صالح', timer: 2000, showConfirmButton: false });
+        return;
+      }
+
+      if (password.length < 6) {
+        Swal.fire({ icon: 'warning', title: 'كلمة المرور قصيرة جدًا (6 أحرف على الأقل)', timer: 2000, showConfirmButton: false });
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        Swal.fire({ icon: 'warning', title: 'كلمة المرور غير متطابقة', timer: 2000, showConfirmButton: false });
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          Swal.fire({ icon: 'success', title: 'تم التسجيل بنجاح', timer: 1500, showConfirmButton: false });
+          setTimeout(() => window.location.href = 'home.html', 1500);
+        } else {
+          Swal.fire({ icon: 'error', title: 'فشل التسجيل', text: data.message || 'حاول لاحقًا' });
+        }
+      } catch (error) {
+        Swal.fire({ icon: 'error', title: 'فشل الاتصال بالسيرفر' });
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
